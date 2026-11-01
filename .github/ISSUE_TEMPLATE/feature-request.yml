@@ -1,0 +1,83 @@
+name: Request a feature
+description: Propose a new capability for Titlecast.
+title: "feat: <short description>"
+labels: [feat, triage]
+body:
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before submitting
+      options:
+        - label: >-
+            The feature is not already proposed in
+            [open issues](https://github.com/theodiv/titlecast/issues?q=is:issue+state:open).
+          required: true
+        - label: >-
+            The feature fits the project's scope: the labels Titlecast owns,
+            kept equal to what one pull request's current title names.
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Titlecast version
+      description: The reference in the `uses:` line, such as `theodiv/titlecast@v0`.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Feature area
+      description: The part of Titlecast the feature concerns.
+      options:
+        - Title reading
+        - Label changes
+        - GitHub API requests
+        - Action inputs and outputs
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: The capability gap, then what it costs.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: >-
+        The behavior the feature should have, in prose; no code or
+        configuration blocks.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: The workaround in use and its limitation.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Specifications or comparable tools.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: intent
+    attributes:
+      label: Contribution intent
+      options:
+        - label: >-
+            A pull request implementing this feature is planned or already in
+            progress.
+          required: false

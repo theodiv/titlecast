@@ -1,0 +1,38 @@
+version: 2
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      ci-actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: ci
+    labels: [ci]
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      runtime:
+        dependency-type: production
+      dev-tools:
+        dependency-type: development
+        patterns: ["*"]
+    ignore:
+      - dependency-name: "@types/node"
+        versions: [">=25.0.0"]
+      - dependency-name: typescript
+        versions: [">=6.1.0"]
+    commit-message:
+      prefix: chore
+    labels: [chore]
+    open-pull-requests-limit: 5

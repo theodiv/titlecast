@@ -1,0 +1,17 @@
+*                               text=auto eol=lf
+
+# Text files
+*.js                            text eol=lf
+*.json                          text eol=lf
+*.md                            text eol=lf diff=markdown
+*.ts                            text eol=lf
+*.yml                           text eol=lf
+.editorconfig                   text eol=lf
+.gitattributes                  text eol=lf
+.gitignore                      text eol=lf
+.node-version                   text eol=lf
+.npmrc                          text eol=lf
+LICENSE                         text eol=lf
+
+# Linguist overrides
+package-lock.json               linguist-generated=true
