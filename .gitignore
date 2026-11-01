@@ -1,3 +1,17 @@
+# Build and distribution
+lib/
+*.tgz
+
+# Dependencies
+node_modules/
+
+# Testing and coverage
+coverage/
+
+# Tool caches
+.eslintcache
+*.tsbuildinfo
+
 # Editors and operating systems
 .idea/
 .vscode/
